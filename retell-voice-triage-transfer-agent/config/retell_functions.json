@@ -1,0 +1,41 @@
+{
+  "_note": "Retell built-in 'Call Transfer' functions. Replace placeholder numbers with real E.164 numbers in the Retell dashboard.",
+  "agent": {
+    "name": "Voice Triage Transfer Agent",
+    "type": "single-prompt",
+    "llm": "GPT 5.6 Terra",
+    "voice": "Cimo",
+    "language": "en-US",
+    "version": "v1-transfer-escalation-safety"
+  },
+  "functions": [
+    {
+      "name": "transfer_billing",
+      "type": "call_transfer",
+      "description": "Transfer the caller to the billing specialist after they give verbal consent (billing dispute, charge, double charge).",
+      "transfer_to": "+1XXXXXXXXXX",
+      "transfer_mode": "warm",
+      "consent_required": true,
+      "ring_duration_seconds": 30
+    },
+    {
+      "name": "transfer_tech",
+      "type": "call_transfer",
+      "description": "Transfer the caller to technical support after they give verbal consent (server failure, technical outage).",
+      "transfer_to": "+1XXXXXXXXXX",
+      "transfer_mode": "warm",
+      "consent_required": true,
+      "ring_duration_seconds": 30
+    },
+    {
+      "name": "transfer_crisis",
+      "type": "call_transfer",
+      "description": "Use immediately in emergencies (self-harm, medical emergency, physical danger). No consent needed.",
+      "transfer_to": "+1XXXXXXXXXX",
+      "transfer_mode": "cold",
+      "consent_required": false,
+      "ring_duration_seconds": 30
+    },
+    {"name": "end_call", "type": "end_call"}
+  ]
+}

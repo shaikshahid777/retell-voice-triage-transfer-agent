@@ -1,0 +1,7 @@
+{
+  "crisis":  {"function": "transfer_crisis",  "mode": "cold", "consent": false, "priority": 1},
+  "faq":     {"function": null, "transfer": false, "topics": ["account balance", "support hours", "password reset"]},
+  "billing": {"function": "transfer_billing", "mode": "warm", "consent": true},
+  "tech":    {"function": "transfer_tech",    "mode": "warm", "consent": true},
+  "failure_fallback": ["voicemail", "callback"]
+}

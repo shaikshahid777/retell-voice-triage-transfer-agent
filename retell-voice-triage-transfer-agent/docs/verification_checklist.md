@@ -1,0 +1,13 @@
+# Verification Checklist
+- [x] Transfer functions configured (transfer_billing, transfer_tech, transfer_crisis)
+- [x] Warm transfers configured (billing, tech)
+- [x] Cold transfer configured (crisis)
+- [x] Consent workflow implemented (yes -> transfer, no -> stays on line)
+- [x] Emergency override skips consent and speaks the disclaimer
+- [x] Fallback voicemail/callback implemented
+- [x] System prompt completed (prompts/system_prompt.md)
+- [x] Transfer ring duration set to 30s on all transfers
+- [x] Test cases executed (tests/test_cases.md)
+- [x] Webhook returns 401 on invalid token (unit tests)
+- [x] Demo video recorded
+- [x] GitHub repository public
